@@ -1,16 +1,13 @@
-import java.util.ArrayList;
-import java.util.Collection;
+import java.lang.reflect.Method;
+
+import javafx.scene.effect.Reflection;
 
 class Main {
+    public static void main(String... arg) throws Exception {
+        Object o = new Object();
+        Method m = Object.class.getMethod("toString");
 
-    static void fun(Object o) {
-        System.out.println(o);
-    }
-
-    public static void main(String... arg) {
-        fun("hie");
-        fun(123);
-
+        m.setAccessible(true);
     }
 
 }
