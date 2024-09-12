@@ -1,2 +1,13 @@
-import zoho from "@zohocrm/nodejs-sdk-2.0"
-console.log(zoho)
+import { log } from "console"
+import http from "http"
+
+let cnt = 0;
+
+http.createServer((req, res) => {
+    if (req.url == "/") {
+        cnt += 1;
+        console.log(cnt);
+
+    }
+    res.end("from server") 
+}).listen(80) 
